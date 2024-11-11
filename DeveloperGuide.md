@@ -406,6 +406,8 @@ modify. Although there is some code duplication, the benefits of clarity and red
 1. In the current implementation of the attendance marking feature, the system does not validate the dates entered by users. This allows users to mark attendance
 for tutorial dates that have not yet occurred. In future updates, the system will include a date validity check to ensure attendance can only be marked for past or current dates.
 
+2. If you try to enter a name that contains `/` the application will show error message about invalid format for `NAME` but someone can have `/` in their legal name e.g `Prabhat S/O Radhe`, this limitation arises due to usage of `/` character for Internal use within the application. We plan to implement a stronger parser function in the future version to tackle with this legal name restriction on the character of  `/`.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
@@ -813,7 +815,3 @@ Note: Users are expected to use the command `listAsg` to find out the assignment
         * Save the file.
     2. Re-launch the application.<br>
        Expected: The application detects the corrupted data file and displays an error message in the terminal. It will then start with an empty data set.
-
-### Future Enhancements
-1. For future enhancements, we plan to make the student profile more responsive to commands, such that when the selected students have their data edited, the student profile will update as well. 
-However, for now, for the student profile to update, double-click on the student card.
